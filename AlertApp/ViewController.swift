@@ -11,16 +11,39 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var usernameText: UITextField!
-    
     @IBOutlet weak var passwordText: UITextField!
-    
     @IBOutlet weak var passwordText2: UITextField!
-    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageName: UILabel!
+    var isPiano = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        imageView.isUserInteractionEnabled = true
+        
+        let gestureRocognizer = UITapGestureRecognizer(target: self, action: #selector(changePic))
+        
+        imageView.addGestureRecognizer(gestureRocognizer)
     }
+    
+    @objc func changePic() {
+                
+        if isPiano {
+            imageView.image = UIImage(named: "synth")
+            imageName.text = "synth"
+            isPiano = false
+        } else {
+            
+            imageView.image = UIImage(named: "piano")
+            imageName.text = "piano"
+            isPiano = true
+        }
+        
+       
+    }
+    
+    
     
     @IBAction func signUpClicked(_ sender: Any) {
         
