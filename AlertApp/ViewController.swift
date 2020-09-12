@@ -15,7 +15,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordText2: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageName: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    var timer = Timer()
     var isPiano = true
+    var counter = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +30,31 @@ class ViewController: UIViewController {
         let gestureRocognizer = UITapGestureRecognizer(target: self, action: #selector(changePic))
         
         imageView.addGestureRecognizer(gestureRocognizer)
+        
+        timeLabel.text = "Time: \(counter)"
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
+        }
+    
+    @objc func timerFunc() {
+        
+        timeLabel.text = "Time: \(counter)"
+        counter -= 1
+        
+        if counter == 0 {
+
+            timer.invalidate()
+            timeLabel.text = "Time's up"
+
+        }
+        
     }
     
+    
+    
+    
     @objc func changePic() {
-                
+        
         if isPiano {
             imageView.image = UIImage(named: "synth")
             imageName.text = "synth"
@@ -43,6 +69,9 @@ class ViewController: UIViewController {
        
     }
     
+    @IBAction func buttonClicked(_ sender: Any) {
+        print("button clicked" )
+    }
     
     
     @IBAction func signUpClicked(_ sender: Any) {

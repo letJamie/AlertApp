@@ -57,6 +57,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8F-Mz-gIz">
+                                <rect key="frame" x="55" y="438" width="131" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkK-nC-Kb6">
+                                <rect key="frame" x="257" y="447" width="76" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TPG-Qh-cOj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -81,6 +96,7 @@
                         <outlet property="imageView" destination="G6l-Vm-ztj" id="w37-Kd-4jZ"/>
                         <outlet property="passwordText" destination="3zz-sp-aYn" id="aHv-rO-tHG"/>
                         <outlet property="passwordText2" destination="bgQ-8W-NQy" id="CMN-AJ-umf"/>
+                        <outlet property="timeLabel" destination="n8F-Mz-gIz" id="0ng-Et-z5m"/>
                         <outlet property="usernameText" destination="7Fo-oH-Aia" id="J6f-fR-Lub"/>
                     </connections>
                 </viewController>
